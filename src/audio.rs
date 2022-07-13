@@ -25,7 +25,7 @@ impl AudioStream {
                         let dropped = {
                             let mut lock = buffer.lock().unwrap();
             
-                            lock.send_many(&mut data.to_vec())
+                            lock.send_many(data.into_iter().copied())
                         };
 
                         if dropped > 0 {

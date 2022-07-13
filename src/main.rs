@@ -30,9 +30,9 @@ fn main() {
 
     let mut spec = spectrogram::SpectogramTexture::new(
         &creator,
-        1,
+        400,
         480,
-        FftProcessor::new(the_ring.clone(), 2048, 40)
+        FftProcessor::new(the_ring.clone(), 2048, 512)
     );
 
     let mut event_pump = sdl_context.event_pump().unwrap();
